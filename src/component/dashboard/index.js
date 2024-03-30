@@ -41,17 +41,7 @@ function Dashboard() {
         <Grid container spacing={3}>
           <Grid item xs={12} md={6} lg={3}>
             <Box mb={1.5}>
-              <CountCard
-                color="dark"
-                icon="videocam"
-                title="Camera Counts"
-                count={5}
-                percentage={{
-                  color: "success",
-                  amount: "+55%",
-                  label: "than lask week",
-                }}
-              />
+              <CountCard color="dark" icon="videocam" title="Camera Counts" count={2} />
             </Box>
           </Grid>
           <Grid item xs={12} md={6} lg={3}>
@@ -66,27 +56,12 @@ function Dashboard() {
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} lg={4}>
               <Box mb={3}>
-                <CameraCard title="Camera 5" description="Last Campaign Performance" />
+                <CameraCard title="Camera 1" description="Live Feed from camera 1" />
               </Box>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
               <Box mb={3}>
-                <CameraCard title="Camera 5" description="Last Campaign Performance" />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <Box mb={3}>
-                <CameraCard title="Camera 5" description="Last Campaign Performance" />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <Box mb={3}>
-                <CameraCard title="Camera 5" description="Last Campaign Performance" />
-              </Box>
-            </Grid>
-            <Grid item xs={12} md={6} lg={4}>
-              <Box mb={3}>
-                <CameraCard title="Camera 5" description="Last Campaign Performance" />
+                <CameraCard title="Camera 2" description="Live Feed from camera 2" />
               </Box>
             </Grid>
           </Grid>

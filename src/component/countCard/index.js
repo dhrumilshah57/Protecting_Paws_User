@@ -9,7 +9,7 @@ import Icon from "@mui/material/Icon";
 import Box from "../box";
 import Typography from "../typography";
 
-function countCard({ color, title, count, percentage, icon }) {
+function countCard({ color, title, count, icon }) {
   return (
     <Card>
       <Box display="flex" justifyContent="space-between" pt={1} px={2}>

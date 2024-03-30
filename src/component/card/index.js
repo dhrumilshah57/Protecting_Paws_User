@@ -35,11 +35,7 @@ function CameraCard({ color, title, description, date, chart }) {
               mt={-5}
               height="12.5rem"
             >
-              <VideoModal
-                videoBase64={
-                  "D:\\React\\material-dashboard-react-main\\src\\assets\\images\\demo.mp4"
-                }
-              />
+              <VideoModal />
             </Box>
           ),
           [color, chart]

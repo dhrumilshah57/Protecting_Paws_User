@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import "./VideoModal.css";
 import team3 from "assets/images/team-3.jpg";
 import liveThumb from "assets/images/live.png";
+import IVSPlayerComponent from "component/IVSPlayer";
 // eslint-disable-next-line react/prop-types
-const VideoModal = ({ videoBase64 }) => {
+const VideoModal = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleModal = () => {
@@ -24,9 +25,10 @@ const VideoModal = ({ videoBase64 }) => {
             <span className="close" onClick={toggleModal}>
               &times;
             </span>
-            <video width="560" height="315" controls>
+            {/* <video width="560" height="315" controls>
               <source src={videoBase64} type="video/mp4" />
-            </video>
+            </video> */}
+            <IVSPlayerComponent />
           </div>
         </div>
       )}
