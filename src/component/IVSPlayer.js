@@ -1,9 +1,11 @@
 import React, { useEffect, useRef } from "react";
 
 const IVSPlayerComponent = () => {
+  // Create a reference to the video player element
   const videoPlayerRef = useRef(null);
 
   useEffect(() => {
+    // Access the IVSPlayer package from the global window object
     const IVSPlayerPackage = window.IVSPlayer;
 
     // First, check if the browser supports the IVS player.
@@ -11,7 +13,7 @@ const IVSPlayerComponent = () => {
       console.warn("The current browser does not support the IVS player.");
       return;
     }
-
+    // Define constants for IVS player states and event types
     const PlayerState = IVSPlayerPackage.PlayerState;
     const PlayerEventType = IVSPlayerPackage.PlayerEventType;
 
@@ -57,15 +59,13 @@ const IVSPlayerComponent = () => {
     // Setup stream and play
     player.setAutoplay(true);
     player.load(
-      "https://4c9c5ad51406.us-east-1.playback.live-video.net/api/video/v1/us-east-1.688601466634.channel.aJ49M1CkU2YR.m3u8"
+      // "https://4c9c5ad51406.us-east-1.playback.live-video.net/api/video/v1/us-east-1.688601466634.channel.aJ49M1CkU2YR.m3u8"
+      "https://8c781dc5e91e.us-east-1.playback.live-video.net/api/video/v1/us-east-1.905418223467.channel.7FuWjmSBM0Kn.m3u8"
     );
     player.setVolume(0.5);
 
     // Clean up resources when the component unmounts
-    return () => {
-      //   player.detachHTMLVideoElement();
-      //   player.dispose();
-    };
+    return () => {};
   }, []);
 
   return <video ref={videoPlayerRef} width="560" height="315" controls />;

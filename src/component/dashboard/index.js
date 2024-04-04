@@ -11,8 +11,11 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Dashboard() {
+  // State variable to store count of items
   const [count, setCount] = useState([]);
+  // Function to fetch count of items from AWS S3 bucket
   const fetchCount = () => {
+    // Initializing AWS S3 client with credentials and bucket details
     const ReactS3Client = new S3({
       accessKeyId: "AKIA5FTZBV5V5QLBMG7W",
       secretAccessKey: "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",
@@ -20,17 +23,21 @@ function Dashboard() {
       region: "us-east-2",
       s3Url: "https://animalpicsdata.s3.us-east-2.amazonaws.com",
     });
+    // Fetching list of files from S3 bucket
     ReactS3Client.listFiles()
       .then((data) => {
+        // Filtering items to get count of animal detection files
         const filteredItems = data.data.Contents.filter((item) =>
           item.Key.startsWith("animal_detection")
         );
-        setCount(filteredItems.length); // Set the count to the number of filtered items
+        // Setting count of items
+
+        setCount(filteredItems.length);
         console.log(filteredItems);
       })
       .catch((err) => console.error(err));
   };
-
+  // useEffect hook to execute fetchCount function when component mounts
   useEffect(() => {
     fetchCount(); // Fetch images when component mounts
   }, []); // Empty dependency array ensures the effect runs only once, when the component mounts
